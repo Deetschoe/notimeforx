@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>No Time for X</title>
+  <style>
+    body {
+      width: 400px;
+      height: 600px;
+      padding: 20px;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      overflow-y: auto;
+    }
+    h1 {
+      text-align: center;
+      text-shadow: 0 0 10px #0f0;
+    }
+    .rule {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #0f0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #0f0;
+    }
+    input, button {
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 5px;
+      margin: 5px 0;
+      font-family: 'Courier New', monospace;
+      width: calc(100% - 10px);
+    }
+    button {
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background-color: #0f0;
+      color: #000;
+    }
+    .ascii-art {
+      font-size: 12px;
+      white-space: pre;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .creator-attribution {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .creator-attribution:hover {
+      opacity: 1;
+    }
+    .creator-attribution a {
+      color: #0f0;
+      text-decoration: none;
+    }
+    .creator-attribution a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="ascii-art">
+    __
+  .-/  \-.
+ (  \__/  )
+/`-./;;\.-`\
+\ _.\;;/._ /
+ (  /  \  )
+  '-\__/-'.-,
+ ,    \\ (-. )
+ |\_   ||/.-`
+ \'.\_ |;`
+  '--,\||     ,
+      `;|   _/|
+       // _/.'/
+ ntfx  //_/,--'
+     ||'-`
+  </div>
+  <h1>no time for x</h1>
+  <div id="rules"></div>
+  <button id="addRule">Add New Rule</button>
+  <div class="creator-attribution">
+    <a href="https://x.com/DeetSchoe" target="_blank">made by deet</a>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
+
