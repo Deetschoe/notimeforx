@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "No Time for X",
   "version": "2.2",
-  "permissions": ["storage", "tabs", "alarms"],
+  "permissions": ["storage", "tabs"],
   "background": {
     "service_worker": "background.js"
   },
@@ -11,11 +11,11 @@
     "default_popup": "popup.html",
     "16": "icon16.png",
     "48": "icon48.png",
-    "128": "icon128.jpg"
+    "128": "icon128.png"
   },
 "icons": {
   "16": "icon16.png",
   "48": "icon48.png",
-  "128": "icon128.jpg"
+  "128": "icon128.png"
 }
 }

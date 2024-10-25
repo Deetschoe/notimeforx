@@ -14,16 +14,80 @@
       overflow-y: auto;
     }
     h1 {
-      text-align: center;
-      text-shadow: 0 0 10px #0f0;
-    }
+  text-align: center;
+  text-shadow: 0 0 10px #fff;
+  color: #fff;
+}
     .rule {
       margin-bottom: 20px;
-      padding: 10px;
       border: 1px solid #0f0;
       border-radius: 5px;
       box-shadow: 0 0 10px #0f0;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
+
+    .rule-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      background-color: rgba(0, 255, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    /* Rule summary when disabled */
+    .rule-summary.disabled {
+  opacity: 0.5;
+  background-color: rgba(0, 255, 0, 0.05);
+}
+
+
+    .rule-title {
+      flex-grow: 1;
+      font-family: 'Courier New', monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .rule-summary.disabled .rule-title {
+  opacity: 0.5;
+}
+
+    .toggle-rule {
+  background: none;
+  border: none;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  color: #fff; /* Default color for active state */
+}
+
+
+    /* Style for active state */
+    .rule-summary:not(.disabled) .toggle-rule {
+      color: #fff;  /* Changed to white */
+    }
+
+    /* Style for sleep state */
+    .rule-summary.disabled .toggle-rule {
+  color: #0f0; /* Light green for sleep state */
+}
+
+    .rule-content {
+      padding: 10px;
+      transition: max-height 0.3s ease-out;
+      max-height: 500px;
+    }
+
+    .rule-content.collapsed {
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
     input, button {
       background-color: #000;
       color: #0f0;
@@ -33,14 +97,17 @@
       font-family: 'Courier New', monospace;
       width: calc(100% - 10px);
     }
+
     button {
       cursor: pointer;
       transition: all 0.3s;
     }
+
     button:hover {
       background-color: #0f0;
       color: #000;
     }
+
     .ascii-art {
       font-size: 12px;
       white-space: pre;
@@ -48,6 +115,7 @@
       text-align: center;
       margin-bottom: 20px;
     }
+
     .creator-attribution {
       text-align: center;
       font-size: 12px;
@@ -55,36 +123,23 @@
       opacity: 0.7;
       transition: opacity 0.3s;
     }
+
     .creator-attribution:hover {
       opacity: 1;
     }
+
     .creator-attribution a {
       color: #0f0;
       text-decoration: none;
     }
+
     .creator-attribution a:hover {
       text-decoration: underline;
     }
+    
   </style>
 </head>
 <body>
-  <div class="ascii-art">
-    __
-  .-/  \-.
- (  \__/  )
-/`-./;;\.-`\
-\ _.\;;/._ /
- (  /  \  )
-  '-\__/-'.-,
- ,    \\ (-. )
- |\_   ||/.-`
- \'.\_ |;`
-  '--,\||     ,
-      `;|   _/|
-       // _/.'/
- ntfx  //_/,--'
-     ||'-`
-  </div>
   <h1>no time for x</h1>
   <div id="rules"></div>
   <button id="addRule">Add New Rule</button>
