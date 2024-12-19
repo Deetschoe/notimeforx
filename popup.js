@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
       rulesContainer.appendChild(createRuleElement({}));
     }
   });
-
   rulesContainer.addEventListener('click', (e) => {
     const ruleDiv = e.target.closest('.rule');
       
